@@ -1,3 +1,5 @@
+package Task1;
+
 public class HomeWork_1 {
 
     // Task 1
@@ -69,14 +71,26 @@ public class HomeWork_1 {
         }
     }
 
+    int[] someArray1 = {4, 12, 4, 12, 4, 32, 6, 6, 12, 6};
+
     static void task5DuplicateVar2(int[] array) {
         int[] helpArray = new int[array.length];
+        int n = 0;
         for (int i = 0; i < array.length; i++) {
             for (int j = i + 1; j < array.length; j++) {
                 if (array[j] == array[i]) {
-                    System.out.println(array[j]);
-                    helpArray[i] = array[j];
+                    boolean alreadyExisting = false;
+                    for (int k = 0; k < n && alreadyExisting == false; k++) {
+                        if (helpArray[k] == array[j]) {
+                            alreadyExisting = true;
 
+                        }
+                    }
+                    if (alreadyExisting == false) {
+                        helpArray[n] = array[i];
+                        System.out.println(helpArray[n]);
+                        n += 1;
+                    }
                 }
             }
         }

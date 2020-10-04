@@ -1,3 +1,5 @@
+package Task1;
+
 public class Computer {
     private String brand;
     private float screenSize;
